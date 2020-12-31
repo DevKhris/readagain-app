@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import './Auth.css';
 
-
 async function auth(credentials) {
  return fetch('http://localhost:8000/api/login', {
    method: 'POST',
@@ -12,7 +11,7 @@ async function auth(credentials) {
    },
    body: JSON.stringify(credentials)
  })
-   .then((data) => data.json())
+   .then((data) => data.json());
 }
 
 export default function Login({setToken}) {
@@ -30,7 +29,7 @@ export default function Login({setToken}) {
   }
   return(
     <div className="ml-auto mr-auto wrapper">
-        <div className="my-5" >
+        <div className="" >
           <Form onSubmit={handler} className="px-4">
             <FormGroup>
               <img className="img-fluid" src="../logo.png" alt="ReadAgain Logo"/>

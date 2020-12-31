@@ -21,10 +21,6 @@ import Register from './Auth/Register';
 // Hooks
 import useToken from './useToken';
 
-function destroyToken() {
-    localStorage.clear();
-};
-
 function App() {
 
     // Set token from hook
@@ -32,13 +28,13 @@ function App() {
 
  
     // if not token is set, request user to login
-  if(!token) {
+  if(token) {
     return <Login setToken={setToken} />
   }
 
   return (
-    <div className="wrapper">
-      <Navbar />
+    <div className="">
+      <Navbar username="trent"/>
       <BrowserRouter>
         <Switch>
           <Route path="/home">

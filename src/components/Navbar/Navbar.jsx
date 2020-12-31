@@ -17,15 +17,17 @@ import {
 const Topbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
+ const toggle = () => setIsOpen(!isOpen);
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
-        <NavbarBrand href=""><img src="../logo.png" alt="ReadAgain" width="156"/></NavbarBrand>
+      <Navbar color="light" light fixed="top" expand="lg">
+        <NavbarBrand href="/">
+        <img src="../logo.png" alt="ReadAgain" width="128" height="64"/>
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+          <Nav className="ml-auto" navbar>
             <NavItem>
               <NavLink href="/home/">Home</NavLink>
             </NavItem>
@@ -37,7 +39,7 @@ const Topbar = (props) => {
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                <NavLink href="/dashboard/">{}</NavLink>
+                <NavLink href="/profile">{props.username}</NavLink>
               </DropdownToggle>
               <DropdownMenu ml-auto>
                 <DropdownItem>
@@ -53,7 +55,6 @@ const Topbar = (props) => {
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-
         </Collapse>
       </Navbar>
     </div>

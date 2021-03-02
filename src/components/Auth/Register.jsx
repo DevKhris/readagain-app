@@ -6,7 +6,7 @@ import './Auth.css';
 export default function Register() {
   return(
     <div className="ml-auto mr-auto wrapper">
-        <div className="my-5"  bg-white>
+        <div className="my-5" bg-white>
           <Form className="px-4">
             <FormGroup>
               <img className="img-fluid" src="../logo.png" alt="ReadAgain Logo"/>
@@ -31,7 +31,7 @@ export default function Register() {
             <FormGroup>
               <Button className="btn-info">Register</Button>
             </FormGroup>
-            <a href="/login/">Already have a account? Login</a>
+            <a href="login">Already have a account? Login</a>
           </Form>
         </div>
     </div>

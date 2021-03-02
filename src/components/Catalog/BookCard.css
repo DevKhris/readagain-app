@@ -1,7 +1,12 @@
-.card-img-top {
-	width: 200px !important;
+.card .card-img {
 	height: 300px !important;
-	border-radius: 10px;
+	margin:	0;
+	padding: 0;
+}
+
+.card-img-top {
+	object-fit: scale-down !important;
+	object-position: center !important;
 }
 
 .book-card {
@@ -11,9 +16,9 @@
 	max-width: 100%;
 }
 
-.card {
-	max-width: 100%;
-	overflow: hidden;
+.card * {
+	width: 100%;
+	object-fit: cover;
 }
 
 .card-text {

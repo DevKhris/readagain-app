@@ -2,6 +2,10 @@ import React, { Component  } from 'react';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import BookCard from './BookCard';
 
+// Styles
+import './Catalog.css';
+
+// API uri
 const API = `http://localhost:8000/api/catalog`;
 
 class Catalog extends Component {
@@ -30,34 +34,43 @@ class Catalog extends Component {
 			return (<div>Loading...</div>);
 		}	
 		return(
-			<div className="row">
-				<div className="col-sm-3">
+		<div>
+			<div className="row"> 
+
+				<div className="mx-auto col-8 text-center">
+				<h2>Catalog</h2>
 				<Form>
 					<FormGroup>
+						<Label>Search</Label>
 						<Input type="text" placeholder="Type your search here"></Input>
 						<Button>Search</Button>
 					</FormGroup>
 				</Form>
 				</div>
-				<div className="col-8">
-					<div className="row">
-						<div className="card-group">
-						{books.map((book, index) => (
-						<BookCard 
-							image={'../' + book.imageLink} 
-							title={book.title}
-							year={book.year} 
-							author={book.author} 
-							language={book.language}
-							pages={book.pages}
-							country={book.country}
-							link={book.link}
-						/>
+			</div>
+			<div className="row">
+				<div className="col-lg-12 col-md-12 col-sm-12">
+				<h3 className="text-center">Total Books in Catalog ({books.length})</h3>
+					<div className="row d-flex align-items-stretch justify-content-center">
+						<div className="card-deck col-lg-12 col-md-12 col-sm-12 my-3">
+							{books.map((book, index) => (
+							<BookCard 
+								className="overflow-auto"
+								image={'../' + book.imageLink} 
+								title={book.title}
+								year={book.year} 
+								author={book.author} 
+								language={book.language}
+								pages={book.pages}
+								country={book.country}
+								link={book.link}
+							/>
 						))}
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 		);
 	}
 	

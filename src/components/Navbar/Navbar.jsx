@@ -29,28 +29,28 @@ const Topbar = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="/home/">Home</NavLink>
+              <NavLink href="home">Home</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/catalog/">Catalog</NavLink>
+              <NavLink href="catalog">Catalog</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/bookshelf/">Bookshelf</NavLink>
+              <NavLink href="bookshelf">Bookshelf</NavLink>
             </NavItem>
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
-                <NavLink href="/profile">{props.username}</NavLink>
+                {props.username}
               </DropdownToggle>
-              <DropdownMenu ml-auto>
+              <DropdownMenu right>
                 <DropdownItem>
-                  <NavLink href="/dashboard/">Dashboard</NavLink>
+                  <NavLink href="dashboard">Dashboard</NavLink>
                 </DropdownItem>
                 <DropdownItem>
-                  <NavLink href="/settings/">Settings</NavLink>
+                  <NavLink href="settings">Settings</NavLink>
                 </DropdownItem>
                 <DropdownItem divider />
                 <DropdownItem>
-                  <NavLink href="/logout/">Logout</NavLink>
+                  <NavLink href="logout">Logout</NavLink>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>

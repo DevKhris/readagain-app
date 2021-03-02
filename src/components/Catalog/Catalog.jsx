@@ -31,7 +31,11 @@ class Catalog extends Component {
     const { books, isLoading } = this.state;
 
     if (isLoading) {
-      return <div>Loading...</div>;
+      return (
+        <div className="text-center">
+          <p className="display-4">Loading...</p>
+        </div>
+      );
     }
     return (
       <div className="container-fluid">
@@ -57,7 +61,7 @@ class Catalog extends Component {
                 <div className="card-columns">
                   {books.map((book, index) => (
                     <BookCard
-                      className="overflow-auto"
+                      className="text-nowrap"
                       image={"../" + book.imageLink}
                       title={book.title}
                       year={book.year}

@@ -18,7 +18,7 @@ import "./BookCard.css";
 export default function BookCard(props) {
   return (
     <div className="text-wrap text-break">
-      <Card className="book-card my-4">
+      <Card className="book-card my-4 shadow-sm shadow-lg">
         <CardHeader>
           <CardImg
             src={props.image}
@@ -30,17 +30,17 @@ export default function BookCard(props) {
           <CardTitle className="text-wrap text-break" tag="h5">
             {props.title}
           </CardTitle>
-          <CardSubtitle>({props.year})</CardSubtitle>
+          <CardSubtitle className="text-muted">{props.year}</CardSubtitle>
           <CardText>Author: {props.author}</CardText>
           <CardText>Language: {props.language}</CardText>
           <CardText>Pages: {props.pages}</CardText>
           <CardText>Country: {props.country}</CardText>
           <CardLink href={props.link} target="_blank">
-            More.
+            Learn More.
           </CardLink>
         </CardBody>
         <CardFooter className="text-center">
-          <Button className="btn-info">Add to Bookshelf</Button>
+          <Button className="btn-add">Add to Read List</Button>
         </CardFooter>
       </Card>
     </div>
